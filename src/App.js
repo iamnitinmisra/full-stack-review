@@ -1,24 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Switch, NavLink } from "react-router-dom";
+import Login from './components/home/Login';
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header>
+        <div>
+          <NavLink exact to="/" activeClassName="active">
+            Home
+          </NavLink>
+          <NavLink to="/kill_map" activeClassName="active">
+            Kill Map
+          </NavLink>
+          <NavLink to="/profile" activeClassName="active">
+            profile
+          </NavLink>
+        </div>
       </header>
+      <Switch>
+        {/* exact on route will allow only the / to be matched */}
+        <Route
+          exact
+          path="/"
+          component={Login}
+        />
+        <Route
+          path="/kill_map"
+          render={() => {
+            return <div>This is the killMap path</div>;
+          }}
+        />
+        <Route
+          path="/profile"
+          render={() => {
+            return <div>This is the profile path</div>;
+          }}
+        />
+        <Route
+          path="*"
+          render={() => {
+            return <div>YALL BEEN ZAPPED BY ALIENS</div>;
+          }}
+        />
+      </Switch>
     </div>
   );
 }

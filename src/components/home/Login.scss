@@ -1,0 +1,30 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  input {
+    margin: 5px 0;
+    width: 200px;
+    padding-left: 5px;
+    text-align: center;
+    height: 40px;
+    border: solid pink 4px;
+    box-shadow: inset 2px 4px 5px rgba(0, 0, 0, 0.363);
+  }
+  input::placeholder {
+    color: red;
+  }
+  button {
+    margin: 0 10px;
+    height: 40px;
+    width: 70px;
+    background: peachpuff;
+    border: solid pink 4px;
+    font-weight: 800;
+    font-size: 12px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    border-radius: 20px;
+  }
+}
